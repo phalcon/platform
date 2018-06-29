@@ -17,7 +17,6 @@ A repository example:
 ```php
 namespace Acme\Repositories;
 
-use Acme\Entities\UserEntity;
 use Phalcon\Platform\Domain\AbstractRepository;
 
 class UserRepository extends AbstractRepository
