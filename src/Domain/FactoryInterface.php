@@ -32,7 +32,7 @@ interface FactoryInterface
      *
      * @return ModelInterface
      */
-    public function createEntity(): ModelInterface;
+    public function createEntity();
 
     /**
      * Creates a repository instance.
@@ -41,12 +41,12 @@ interface FactoryInterface
      *
      * @return RepositoryInterface
      */
-    public function createRepository(ModelInterface $entity): RepositoryInterface;
+    public function createRepository($entity);
 
     /**
      * Creates a service instance.
      *
      * @return ServiceInterface
      */
-    public function createService(): ServiceInterface;
+    public function createService();
 }
