@@ -54,17 +54,29 @@ use Acme\Repositories\UserRepository;
 use Acme\Services\UserService;
 use Phalcon\Di\InjectionAwareInterface;
 use Phalcon\Platform\Traits\InjectionAwareTrait;
+use Phalcon\Platform\Domain\FactoryInterface;
 
-class UserFactory implements InjectionAwareInterface
+class UserFactory implements FactoryInterface
 {
     use InjectionAwareTrait;
 
-    public function createService(UserEntity $entity = null): UserService
+    public function createEntity(): UserEntity
     {
-        $entity = $entity ?: $this->getDI()->get(UserEntity::class);
-        $repository = $this->getDI()->get(UserRepository::class, [$entity]);
+        return $this->getDI()->get(UserEntity::class);
+    }
 
-        return $this->getDI()->get(UserService::class, [$repository]);
+    public function createRepository(UserEntity $entity): UserRepository
+    {
+        return $this->getDI()->get(UserRepository::class, [$entity]);
+    }
+
+    public function createService(): UserService
+    {
+        return $this->getDI()->get(UserService::class, [
+            $this->createRepository(
+                $this->createEntity()
+            )
+        ]);
     }
 }
 ```
