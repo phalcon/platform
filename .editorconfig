@@ -1,0 +1,46 @@
+# EditorConfig is awesome: http://EditorConfig.org
+
+# top-most EditorConfig file
+root                     = true
+charset                  = utf-8
+trim_trailing_whitespace = true
+
+[*.{mk,Makefile,sh}]
+charset                  = utf-8
+end_of_line              = lf
+indent_size              = 4
+indent_style             = tab
+tab_width                = 4
+trim_trailing_whitespace = true
+insert_final_newline     = true
+
+[*.{json,xml}]
+charset                  = utf-8
+end_of_line              = lf
+indent_size              = 2
+indent_style             = space
+trim_trailing_whitespace = true
+insert_final_newline     = true
+
+[*.yml]
+charset                  = utf-8
+end_of_line              = lf
+indent_size              = 4
+indent_style             = space
+trim_trailing_whitespace = true
+insert_final_newline     = true
+
+[*.{php,volt}]
+charset                  = utf-8
+end_of_line              = lf
+indent_size              = 4
+indent_style             = space
+trim_trailing_whitespace = true
+insert_final_newline     = true
+
+[*.md]
+charset                  = utf-8
+end_of_line              = lf
+indent_style             = space
+trim_trailing_whitespace = false
+insert_final_newline     = true

@@ -1,0 +1,54 @@
+{
+  "name": "phalcon/platform",
+  "description": "A foundation to build applications using Phalcon.",
+  "type": "library",
+  "license": "BSD-3-Clause",
+  "homepage": "https://phalconphp.com/",
+
+  "keywords": [
+    "phalcon",
+    "platform",
+    "foundation",
+    "core"
+  ],
+
+  "authors": [
+    {
+      "name": "Phalcon Team",
+      "email": "team@phalconphp.com",
+      "homepage": "https://phalconphp.com/en/team"
+    },
+    {
+      "name": "Contributors",
+      "homepage": "https://github.com/phalcon/forum/graphs/contributors"
+    }
+  ],
+
+  "support": {
+    "source": "https://github.com/phalcon/platform",
+    "issues": "https://github.com/phalcon/platform/issues",
+    "forum": "https://phalconphp.com"
+  },
+
+  "require": {
+    "php": ">= 7.1",
+    "ext-phalcon": "~3.2"
+  },
+
+  "require-dev": {
+    "phpstan/phpstan": "0.9.*",
+    "squizlabs/php_codesniffer": "3.3.*"
+  },
+
+  "autoload": {
+    "psr-4": {
+      "Phalcon\\Platform\\": "src/"
+    }
+  },
+
+  "config": {
+    "preferred-install": "dist",
+    "sort-packages": true,
+    "optimize-autoloader": true
+  }
+}
