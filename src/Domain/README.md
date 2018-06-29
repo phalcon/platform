@@ -48,7 +48,7 @@ use Phalcon\Di\InjectionAwareInterface;
 use Phalcon\Platform\Traits\InjectionAwareTrait;
 use Phalcon\Platform\Domain\FactoryInterface;
 
-class UserFactory implements FactoryInterface, InjectionAwareInterface
+class UserFactory implements InjectionAwareInterface
 {
     use InjectionAwareTrait;
 
