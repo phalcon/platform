@@ -20,15 +20,8 @@ namespace Acme\Repositories;
 use Acme\Entities\UserEntity;
 use Phalcon\Platform\Domain\AbstractRepository;
 
-/**
- * @method \Acme\Entities\UserEntity getEntity()
- */
 class UserRepository extends AbstractRepository
 {
-    public function __construct(UserEntity $entity)
-    {
-        parent::__construct($entity);
-    }
 }
 ```
 
