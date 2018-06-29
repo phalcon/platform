@@ -46,7 +46,6 @@ use Acme\Repositories\UserRepository;
 use Acme\Services\UserService;
 use Phalcon\Di\InjectionAwareInterface;
 use Phalcon\Platform\Traits\InjectionAwareTrait;
-use Phalcon\Platform\Domain\FactoryInterface;
 
 class UserFactory implements InjectionAwareInterface
 {
