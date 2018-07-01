@@ -17,10 +17,15 @@ A repository example:
 ```php
 namespace Acme\Repositories;
 
+use Acme\Entities\UserEntity;
 use Phalcon\Platform\Domain\AbstractRepository;
 
 class UserRepository extends AbstractRepository
 {
+    public function __construct(UserEntity $entity)
+    {
+        parent::__construct($entity);
+    }
 }
 ```
 
@@ -29,10 +34,15 @@ A service example:
 ```php
 namespace Acme\Services;
 
+use Acme\Repositories\UserRepository;
 use Phalcon\Platform\Domain\AbstractService;
 
 class UserService extends AbstractService
 {
+    public function __construct(UserRepository $repository)
+    {
+        parent::__construct($repository);
+    }
 }
 ```
 
