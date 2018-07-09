@@ -64,4 +64,16 @@ abstract class AbstractRepository implements RepositoryInterface
 
         return $result ?: null;
     }
+
+    /**
+     * {@inheritdoc}
+     *
+     * @param  string|array $conditions
+     *
+     * @return int
+     */
+    public function count($conditions = []): int
+    {
+        return $this->getEntity()->count($conditions);
+    }
 }

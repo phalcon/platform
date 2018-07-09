@@ -43,4 +43,29 @@ interface RepositoryInterface
      * @return ResultsetInterface
      */
     public function find($parameters = null): ResultsetInterface;
+
+    /**
+     * Counts how many records match the specified conditions.
+     *
+     * <code>
+     * // How many robots are there?
+     * echo "There are ", $robotsRepository->count(), "\n";
+     *
+     * // How many mechanical robots are there?
+     * $number = $robotsRepository->count("type = 'mechanical'");
+     * echo "There are ", $number, " mechanical robots", "\n";
+     *
+     * // How many deleted robots are there?
+     * $number = $robotsRepository->count([
+     *     'deleted = :deleted:',
+     *     'bind'      => ['deleted' => 0],
+     *     'bindTypes' => ['user_id' => \Phalcon\Db\Column::BIND_PARAM_INT],
+     * ]);
+     * </code>
+     *
+     * @param  string|array $conditions
+     *
+     * @return int
+     */
+    public function count($conditions = []): int;
 }
