@@ -1,0 +1,67 @@
+sudo: false
+dist: trusty
+
+language: php
+
+php:
+    - 7.1
+    - 7.2
+    - nightly
+
+git:
+    depth: 1
+
+env:
+    global:
+        - CC="gcc"
+        - PHALCON_VERSION=v3.4.0
+
+matrix:
+    fast_finish: true
+    allow_failures:
+        - php: nightly
+
+cache:
+    apt: true
+    timeout: 604800
+    directories:
+        - $HOME/.composer/cache
+        - $HOME/.local/lib
+
+before_install:
+    - ulimit -c unlimited -S || true
+    - phpenv config-rm xdebug.ini || true
+    - if [ -n "$GH_TOKEN" ]; then composer config github-oauth.github.com $GH_TOKEN; fi;
+
+install:
+    - bash tests/ci/install_phalcon.sh
+    - |
+        composer install \
+            --prefer-dist \
+            --no-interaction \
+            --no-ansi \
+            --no-progress \
+            --optimize-autoloader \
+            --no-suggest
+    - ls -al `$(phpenv which php-config) --extension-dir`
+    - $(phpenv which php) -v
+    - $(phpenv which php) -m
+    - $(phpenv which php) --ri phalcon
+
+before_script:
+    # do nothing
+
+script:
+    - vendor/bin/phpcs
+    - vendor/bin/phpstan analyse -l max src
+
+after_failure:
+    # do nothing
+
+after_success:
+    - if [[ ! -z "${CODECOV_TOKEN}" ]]; then bash <(curl -s https://codecov.io/bash); fi;
+
+notifications:
+    email:
+        on_success: never
+        on_failure: never

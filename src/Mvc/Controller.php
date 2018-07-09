@@ -52,7 +52,7 @@ abstract class Controller extends Injectable implements ControllerInterface
     /**
      * {@inheritdoc}
      *
-     * This method is not abstract because you can gave a concrete controller class
+     * This method is not abstract because you can have a concrete controller class
      * without 'onConstruct' event.
      *
      * @return void
