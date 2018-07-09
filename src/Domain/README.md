@@ -54,13 +54,10 @@ namespace Acme\Factories;
 use Acme\Entities\UserEntity;
 use Acme\Repositories\UserRepository;
 use Acme\Services\UserService;
-use Phalcon\Di\InjectionAwareInterface;
-use Phalcon\Platform\Traits\InjectionAwareTrait;
+use Phalcon\Platform\Domain\AbstractFactory;
 
-class UserFactory implements InjectionAwareInterface
+class UserFactory extends AbstractFactory
 {
-    use InjectionAwareTrait;
-
     public function createEntity(): UserEntity
     {
         return $this->getDI()->get(UserEntity::class);
