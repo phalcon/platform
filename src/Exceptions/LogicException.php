@@ -16,17 +16,16 @@ declare(strict_types=1);
  +------------------------------------------------------------------------+
 */
 
-namespace Phalcon\Platform\Domain;
-
-use Phalcon\Di\InjectionAwareInterface;
-use Phalcon\Platform\Traits\InjectionAwareTrait;
+namespace Phalcon\Platform\Exceptions;
 
 /**
- * Phalcon\Platform\Domain\AbstractFactory
+ * Phalcon\Platform\Exceptions\LogicException
  *
- * @package Phalcon\Platform\Domain
+ * Exception that represents error in the program logic.
+ * This kind of exceptions should directly lead to a fix in your code.
+ *
+ * @package Phalcon\Platform\Exceptions
  */
-abstract class AbstractFactory implements InjectionAwareInterface
+class LogicException extends Exception
 {
-    use InjectionAwareTrait;
 }

@@ -16,17 +16,15 @@ declare(strict_types=1);
  +------------------------------------------------------------------------+
 */
 
-namespace Phalcon\Platform\Domain;
-
-use Phalcon\Di\InjectionAwareInterface;
-use Phalcon\Platform\Traits\InjectionAwareTrait;
+namespace Phalcon\Platform\Exceptions;
 
 /**
- * Phalcon\Platform\Domain\AbstractFactory
+ * Phalcon\Platform\Exceptions\DomainException
  *
- * @package Phalcon\Platform\Domain
+ * Exception thrown if a value does not adhere to a defined valid data domain.
+ *
+ * @package Phalcon\Platform\Exceptions
  */
-abstract class AbstractFactory implements InjectionAwareInterface
+class DomainException extends LogicException
 {
-    use InjectionAwareTrait;
 }

@@ -16,17 +16,16 @@ declare(strict_types=1);
  +------------------------------------------------------------------------+
 */
 
-namespace Phalcon\Platform\Domain;
-
-use Phalcon\Di\InjectionAwareInterface;
-use Phalcon\Platform\Traits\InjectionAwareTrait;
+namespace Phalcon\Platform\Exceptions;
 
 /**
- * Phalcon\Platform\Domain\AbstractFactory
+ * Phalcon\Platform\Exceptions\OutOfBoundsException
  *
- * @package Phalcon\Platform\Domain
+ * Exception thrown if a value is not a valid key.
+ * This represents errors that cannot be detected at compile time.
+ *
+ * @package Phalcon\Platform\Exceptions
  */
-abstract class AbstractFactory implements InjectionAwareInterface
+class OutOfBoundsException extends RuntimeException
 {
-    use InjectionAwareTrait;
 }

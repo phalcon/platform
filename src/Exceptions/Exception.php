@@ -16,17 +16,15 @@ declare(strict_types=1);
  +------------------------------------------------------------------------+
 */
 
-namespace Phalcon\Platform\Domain;
-
-use Phalcon\Di\InjectionAwareInterface;
-use Phalcon\Platform\Traits\InjectionAwareTrait;
+namespace Phalcon\Platform\Exceptions;
 
 /**
- * Phalcon\Platform\Domain\AbstractFactory
+ * Phalcon\Platform\Exceptions\Exception
  *
- * @package Phalcon\Platform\Domain
+ * Exception is the base class for all Exceptions.
+ *
+ * @package Phalcon\Platform\Exceptions
  */
-abstract class AbstractFactory implements InjectionAwareInterface
+class Exception extends \Exception implements ExceptionInterface
 {
-    use InjectionAwareTrait;
 }

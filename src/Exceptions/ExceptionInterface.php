@@ -16,17 +16,15 @@ declare(strict_types=1);
  +------------------------------------------------------------------------+
 */
 
-namespace Phalcon\Platform\Domain;
-
-use Phalcon\Di\InjectionAwareInterface;
-use Phalcon\Platform\Traits\InjectionAwareTrait;
+namespace Phalcon\Platform\Exceptions;
 
 /**
- * Phalcon\Platform\Domain\AbstractFactory
+ * Phalcon\Platform\Exceptions\ExceptionInterface
  *
- * @package Phalcon\Platform\Domain
+ * This interface must be implemented by all Platform Exception classes
+ *
+ * @package Phalcon\Platform\Exceptions
  */
-abstract class AbstractFactory implements InjectionAwareInterface
+interface ExceptionInterface extends \Throwable
 {
-    use InjectionAwareTrait;
 }

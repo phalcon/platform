@@ -16,17 +16,17 @@ declare(strict_types=1);
  +------------------------------------------------------------------------+
 */
 
-namespace Phalcon\Platform\Domain;
+namespace Phalcon\Platform\Domain\Exceptions;
 
-use Phalcon\Di\InjectionAwareInterface;
-use Phalcon\Platform\Traits\InjectionAwareTrait;
+use Phalcon\Platform\Exceptions\RuntimeException;
 
 /**
- * Phalcon\Platform\Domain\AbstractFactory
+ * Phalcon\Platform\Domain\Exceptions\PersistenceException
  *
- * @package Phalcon\Platform\Domain
+ * Thrown by the persistence provider when a problem occurs.
+ *
+ * @package Phalcon\Platform\Domain\Exceptions
  */
-abstract class AbstractFactory implements InjectionAwareInterface
+class PersistenceException extends RuntimeException
 {
-    use InjectionAwareTrait;
 }
