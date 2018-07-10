@@ -54,25 +54,23 @@ abstract class AbstractRepository implements RepositoryInterface
     /**
      * {@inheritdoc}
      *
-     * @param int|string|array $parameters
+     * @param  int|string|array $conditions
      *
      * @return ResultsetInterface
      */
-    public function find($parameters = null): ResultsetInterface
+    public function find($conditions = null): ResultsetInterface
     {
-        $result = $this->getEntity()->find($parameters);
-
-        return $result ?: null;
+        return $this->getEntity()->find($conditions);
     }
 
     /**
      * {@inheritdoc}
      *
-     * @param  string|array $conditions
+     * @param  int|string|array $conditions
      *
      * @return int
      */
-    public function count($conditions = []): int
+    public function count($conditions = null): int
     {
         return $this->getEntity()->count($conditions);
     }
